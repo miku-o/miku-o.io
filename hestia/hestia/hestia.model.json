@@ -1,5 +1,6 @@
 {
-	"version":"Sample 1.0.0",
+	"type": "Live2D Model Setting",
+	"name": "model",
 	"model":"moc/hestia.moc",
 	"textures":[
 		"moc/hestia2048/texture_00.png"
