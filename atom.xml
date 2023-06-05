@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ZhangYiJia⼁Blog</title>
+  
+  <subtitle>为了梦想而努力!</subtitle>
+  <link href="https://blog.zhangyijia.ml/atom.xml" rel="self"/>
+  
+  <link href="https://blog.zhangyijia.ml/"/>
+  <updated>2023-06-05T02:51:45.029Z</updated>
+  <id>https://blog.zhangyijia.ml/</id>
+  
+  <author>
+    <name>ZhangYiJia</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Swiftype给博客添加站内搜索功能</title>
+    <link href="https://blog.zhangyijia.ml/posts/1223277235.html"/>
+    <id>https://blog.zhangyijia.ml/posts/1223277235.html</id>
+    <published>2020-03-29T11:24:56.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Swiftype 一个非常好用的站内搜索平台&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="博客" scheme="https://blog.zhangyijia.ml/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="Swiftype" scheme="https://blog.zhangyijia.ml/tags/Swiftype/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随机图片api</title>
+    <link href="https://blog.zhangyijia.ml/posts/402237492.html"/>
+    <id>https://blog.zhangyijia.ml/posts/402237492.html</id>
+    <published>2020-03-19T20:40:42.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;随机图片api&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="其他" scheme="https://blog.zhangyijia.ml/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="api" scheme="https://blog.zhangyijia.ml/tags/api/"/>
+    
+    <category term="图" scheme="https://blog.zhangyijia.ml/tags/%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git的基本操作</title>
+    <link href="https://blog.zhangyijia.ml/posts/412439506.html"/>
+    <id>https://blog.zhangyijia.ml/posts/412439506.html</id>
+    <published>2020-03-19T20:00:24.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Github" scheme="https://blog.zhangyijia.ml/categories/Github/"/>
+    
+    
+    <category term="git" scheme="https://blog.zhangyijia.ml/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>免费图床⼁Github+jsDelivr</title>
+    <link href="https://blog.zhangyijia.ml/posts/4220402665.html"/>
+    <id>https://blog.zhangyijia.ml/posts/4220402665.html</id>
+    <published>2020-02-26T12:37:45.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;基于Github和jsDelivr加速打造稳定快速、高效的免费图床&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="博客" scheme="https://blog.zhangyijia.ml/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="图床" scheme="https://blog.zhangyijia.ml/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+    <category term="jsDelivr" scheme="https://blog.zhangyijia.ml/tags/jsDelivr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BiliBili挂机脚本推荐</title>
+    <link href="https://blog.zhangyijia.ml/posts/3375370328.html"/>
+    <id>https://blog.zhangyijia.ml/posts/3375370328.html</id>
+    <published>2020-02-19T13:28:15.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;B站直播实用脚本&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="其他" scheme="https://blog.zhangyijia.ml/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="bilibili" scheme="https://blog.zhangyijia.ml/tags/bilibili/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://blog.zhangyijia.ml/posts/1243066710.html"/>
+    <id>https://blog.zhangyijia.ml/posts/1243066710.html</id>
+    <published>2020-02-19T10:28:03.000Z</published>
+    <updated>2023-06-05T02:51:45.029Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;!&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="其他" scheme="https://blog.zhangyijia.ml/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="hexo" scheme="https://blog.zhangyijia.ml/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

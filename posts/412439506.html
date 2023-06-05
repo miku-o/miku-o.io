@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Git的基本操作 - ZhangYiJia⼁Blog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="生活">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="PdzC6Rfhxkjd1TKT_F1QoxNAiLcRp4L74Okw6HqDRD4" />
+
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="kApuX9M57c" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git的基本操作">
+<meta property="og:url" content="https://blog.zhangyijia.ml/posts/412439506.html">
+<meta property="og:site_name" content="ZhangYiJia⼁Blog">
+<meta property="og:description" content="Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-19T20:00:24.000Z">
+<meta property="article:modified_time" content="2023-06-05T02:51:45.029Z">
+<meta property="article:author" content="ZhangYiJia">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1685933572642">
+    
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_1644510_yxa7de7c4i8.css">
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1685933572642">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1685933572642">
+    <link rel="stylesheet" href="/css/style.css?v=1685933572642">
+     
+    
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="ZhangYiJia⼁Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/miku-o/imgData@latest/bg.webp)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="ZhangYiJia" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/miku-o/imgData@latest/2020/10/02/5c3aedy.webp" alt="ZhangYiJia"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="ZhangYiJia">
+            <img src="https://cdn.jsdelivr.net/gh/miku-o/imgData@latest/2020/10/02/5c3aedy.webp" alt="ZhangYiJia" alt="ZhangYiJia">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>6</div>
+        <div><span>标签</span>8</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/guestbook.html" title="留言板">
+            <i class="mdui-list-item-icon nexmoefont icon-mail-fill"></i>
+            <div class="mdui-list-item-content">
+                留言板
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="tencent://Message/?Uin=2438175594&amp;websiteName=q-zone.qq.com&amp;Menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(102, 204, 255);background-color: rgba(102, 204, 255, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://t.me/ZhangYiJia" target="_blank" mdui-tooltip="{content: 'Telegram'}" style="color: rgb(102, 204, 255);background-color: rgba(102, 204, 255, .15);">
+            <i class="nexmoefont icon-telegram"></i>
+        </a><a class="mdui-ripple" href="https://github.com/miku-o/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="/atom.xml" target="_blank" mdui-tooltip="{content: 'RSS'}" style="color: rgb(255, 204, 153);background-color: rgba(255, 204, 153, .15);">
+            <i class="nexmoefont icon-rss"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Swiftype/" style="font-size: 10px;">Swiftype</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsDelivr/" style="font-size: 10px;">jsDelivr</a> <a href="/tags/%E5%9B%BE/" style="font-size: 10px;">图</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Github/">Github</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/其他/">其他</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/博客/">博客</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+</aside>
+    <div class="nexmoe-widget-wrap">
+        <div class="item-headline"><span><h3 class="nexmoe-widget-title">Pixiv日榜Top50</h3></span></div><iframe src="https://cloud.mokeyjay.com/pixiv" frameborder="0" style="width:98%;height:380px;margin:0;"></iframe>
+    </div>
+    <div class="nexmoe-copyright">
+        <p align="right"> &copy; 2023 ZhangYiJia<br/><font size="2"> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a></font></p>
+      <center>
+      <span style="line-height:30px;">
+      <div id="binft"></div>
+        <script>
+          var binft = function (r) {
+            function t() {
+              return b[Math.floor(Math.random() * b.length)]
+            }  
+            function e() {
+              return String.fromCharCode(94 * Math.random() + 33)
+            }
+            function n(r) {
+              for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                var l = document.createElement("span");
+                l.textContent = e(), l.style.color = t(), n.appendChild(l)
+              }
+              return n
+            }
+            function i() {
+              var t = o[c.skillI];
+              c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+            }
+            var l = "",
+            o = ["永远相信美好的事即将发生"].map(function (r) {
+            return r + ""
+            }),
+            a = 2,
+            g = 1,
+            s = 5,
+            d = 75,
+            b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+            c = {
+              text: "",
+              prefixP: -s,
+              skillI: 0,
+              skillP: 0,
+              direction: "forward",
+              delay: a,
+              step: g
+            };
+            i()
+            };
+            binft(document.getElementById('binft'));
+        </script>
+      </span>
+      </center> 
+      </div>
+         <div>
+           <p align="center"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/0.js?i=55edwh7ch0q&amp;d=2&amp;p=3&amp;b=1&amp;w=218&amp;g=2&amp;f=arial&amp;fs=12&amp;r=0&amp;c0=ffffff&amp;c1=007eff&amp;c2=000000&amp;ic0=0&amp;ic1=0" async="async"></script></center></p>
+         </div>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/miku-o/imgData/learngit.jpg" data-sizes="auto" alt="Git的基本操作" class="lazyload">
+              <h1>Git的基本操作</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月19日</a>
+</div>
+
+      
+
+      <p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目</p>
+<span id="more"></span>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --list  <span class="token comment" spellcheck="true">#查看配置的信息</span>
+<span class="token function">git</span> config --global user.name <span class="token string">"username"</span> <span class="token comment" spellcheck="true">#设置用户名</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"email"</span> <span class="token comment" spellcheck="true">#设置邮箱</span>
+<span class="token function">git</span> <span class="token function">help</span> config <span class="token comment" spellcheck="true">#获取帮助信息</span>
+</code></pre>
+<h2 id="普通操作"><a href="#普通操作" class="headerlink" title="普通操作"></a>普通操作</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status <span class="token comment" spellcheck="true">#查看已添加到暂存区文件状态</span>
+<span class="token function">git</span> <span class="token function">diff</span> <span class="token comment" spellcheck="true">#查看未添加暂存区文件状态</span>
+<span class="token function">git</span> add <span class="token function">file</span> <span class="token comment" spellcheck="true">#添加文件</span>
+<span class="token function">git</span> add <span class="token keyword">.</span> <span class="token comment" spellcheck="true">#添加当前目录下所有文件到版本库</span>
+<span class="token function">git</span> add -A <span class="token comment" spellcheck="true">#添加所有文件到版本库</span>
+<span class="token function">git</span> commit -m <span class="token string">'注释'</span> <span class="token comment" spellcheck="true">#提交</span>
+<span class="token function">git</span> push <span class="token comment" spellcheck="true">#推送到仓库</span>
+<span class="token function">git</span> pull <span class="token comment" spellcheck="true">#拉取当前分支仓库最新代码</span>
+<span class="token function">git</span> pull dev <span class="token comment" spellcheck="true">#拉取指定分支的代码与本地分支合并</span>
+<span class="token function">git</span> reset --hard <span class="token comment" spellcheck="true">#回滚到上版本</span>
+<span class="token function">git</span> reset --hard af442cb672b02cdfca1fcb <span class="token comment" spellcheck="true">#回滚到指定的版本</span>
+<span class="token function">git</span> checkout <span class="token keyword">.</span> <span class="token comment" spellcheck="true">#恢复暂存区的所有文件到工作区</span>
+<span class="token function">git</span> checkout <span class="token function">file</span> <span class="token comment" spellcheck="true">#恢复暂存区的指定文件到工作区</span>
+<span class="token function">git</span> checkout af442cb672b02cdfca1fcb index.php <span class="token comment" spellcheck="true">#恢复某个 commit 的指定文件到暂存区和工作区</span>
+</code></pre>
+<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> project <span class="token operator">&amp;&amp;</span> <span class="token function">cd</span> project
+<span class="token function">git</span> init <span class="token comment" spellcheck="true">#初始化</span>
+<span class="token function">git</span> status <span class="token comment" spellcheck="true">#查看文件状态</span>
+<span class="token function">git</span> add <span class="token function">file</span> <span class="token comment" spellcheck="true">#.或*代表全部添加</span>
+<span class="token function">git</span> commit -m <span class="token string">'update'</span> <span class="token comment" spellcheck="true">#此处注意乱码</span>
+<span class="token function">git</span> remote add origin git@github.com:username/project.git <span class="token comment" spellcheck="true">#关联远程仓库</span>
+<span class="token function">git</span> push -u origin master <span class="token comment" spellcheck="true">#第一次推送文件到远程仓库</span>
+</code></pre>
+<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/username/project.git <span class="token comment" spellcheck="true">#克隆远程仓库</span>
+<span class="token function">git</span> clone https://github.com/username/project.git 123 <span class="token comment" spellcheck="true">#克隆并指定目录名称</span>
+</code></pre>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> log <span class="token comment" spellcheck="true">#查看提交日志</span>
+<span class="token function">git</span> reflog <span class="token comment" spellcheck="true">#查看提交日志 </span>
+<span class="token function">git</span> reset <span class="token comment" spellcheck="true">#回滚版本依然有日志，可以撤销回滚</span>
+<span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline <span class="token comment" spellcheck="true">#单行显示提交日志</span>
+<span class="token function">git</span> log --author<span class="token operator">=</span>username <span class="token comment" spellcheck="true">#查看指定用户的日志</span>
+<span class="token function">git</span> log -p filename <span class="token comment" spellcheck="true">#查看文件每次提交的修改部分</span>
+</code></pre>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token comment" spellcheck="true">#查看本地分支</span>
+<span class="token function">git</span> branch -r <span class="token comment" spellcheck="true">#查看远端分支</span>
+<span class="token function">git</span> branch -a <span class="token comment" spellcheck="true">#查看所有分支</span>
+<span class="token function">git</span> branch <span class="token function">test</span> <span class="token comment" spellcheck="true">#新建 test 分支</span>
+<span class="token function">git</span> checkout -b dev <span class="token comment" spellcheck="true">##新建 dev 分支并切换</span>
+<span class="token function">git</span> checkout - <span class="token comment" spellcheck="true">#切换到上一个分支</span>
+<span class="token function">git</span> checkout -b <span class="token function">test</span> dev <span class="token comment" spellcheck="true">#基于 dev 新建 test 分支，并切换</span>
+<span class="token function">git</span> merge <span class="token function">test</span> <span class="token comment" spellcheck="true">#将test分支合并到当前分支</span>
+<span class="token function">git</span> branch -m old new <span class="token comment" spellcheck="true">#重命名分支</span>
+<span class="token function">git</span> branch -M old new <span class="token comment" spellcheck="true">#强制重命名分支</span>
+<span class="token function">git</span> push origin branch <span class="token comment" spellcheck="true">#推送分支到远程</span>
+<span class="token function">git</span> branch -d branch <span class="token comment" spellcheck="true">#删除本地分支</span>
+<span class="token function">git</span> branch -D branch <span class="token comment" spellcheck="true">#强制删除本地分支(当分支内容有修改并且已经 commit 时，分支没有合并，需要强制删除)</span>
+<span class="token function">git</span> push origin --delete branch <span class="token comment" spellcheck="true">#删除远程分支</span>
+</code></pre>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> tag <span class="token comment" spellcheck="true">#列出现有标签</span>
+<span class="token function">git</span> tag v0.1<span class="token comment" spellcheck="true">#新建标签</span>
+<span class="token function">git</span> tag -a v0.1 -m <span class="token string">'my version 1.4'</span><span class="token comment" spellcheck="true">#新建带注释标签</span>
+<span class="token function">git</span> checkout tagname <span class="token comment" spellcheck="true">#切换到标签</span>
+<span class="token function">git</span> push origin v1.5 <span class="token comment" spellcheck="true">#推送分支到源上</span>
+<span class="token function">git</span> push origin --tags <span class="token comment" spellcheck="true">#一次性推送所有分支</span>
+<span class="token function">git</span> tag -d tag <span class="token comment" spellcheck="true">#删除本地 tag</span>
+<span class="token function">git</span> push origin :tag <span class="token comment" spellcheck="true">#删除远程 tag</span>
+</code></pre>
+<h2 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote -v <span class="token comment" spellcheck="true">#查看全部远程仓库</span>
+<span class="token function">git</span> remote add origin https://github.com/username/project.git <span class="token comment" spellcheck="true">#添加本地仓库与远程仓库关联</span>
+<span class="token function">git</span> remote <span class="token function">rename</span> origin github <span class="token comment" spellcheck="true">#重命名</span>
+<span class="token function">git</span> remote remove origin <span class="token comment" spellcheck="true">#取消与远程仓库关联</span>
+</code></pre>
+
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Github/">Github</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/git/" rel="tag">git</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '.valine',
+        appId: 'loNGO3v4EKdOoGygvOBYU6Id-MdYXbMMI',
+        appKey: 'mRAXWy7tWYMjQSS41cEoSBk4',
+        serverURLs: 'https://longo3v4.api.lncldglobal.com',
+        master: '48c8f1e79dd340e4b247820fee013082',   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends:  ["fe01ce2a7fbac8fafaed7c982a04e229","fe01ce2a7fbac8fafaed7c982a04e229"],  //小伙伴邮箱Md5
+        metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
+        placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+        avatar: 'wavatar',
+        enableQQ: true,
+    });
+
+</script>
+
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1685933572643"></script>
+
+
+	<script async src="/js/search.js?v=1685933572643"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+    <!-- Google Analytics -->
+<script>
+window.ga_tid = "UA-146279771-2"; // {String} The trackerID of your site.
+window.ga_api = "https://analytics.zhangyijia.workers.dev/"; // {String} The route of your cloudflare workers you just registered before.
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cfga@1.0.3" async></script>
+
+
+
+
+
+
+
+    <!-- baidu Analytics -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?140465a249703367e890f5932f2381c1';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/miku-o/miku-o.github.io@live2d/xiaoban/model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
